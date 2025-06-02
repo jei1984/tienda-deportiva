@@ -1,0 +1,402 @@
+  <!DOCTYPE html>
+  <html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - demjt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Mismo header que index.html -->
+         <div class="container">
+            <div class="logo">
+                <img src="img/logos/logo-demjt.png" alt="Demjt Logo">
+                <h1>DEMJT</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="user-cart">
+                <a href="#cuenta"><i class="fas fa-user"></i></a>
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="products-page">
+        <div class="filters">
+            <h3>Filtrar por:</h3>
+            <div class="filter-section">
+                <h4>Categoría</h4>
+                <ul>
+                    <li><a href="productos.html">Todos</a></li>
+                    <li><a href="productos.html?categoria=running">Running</a></li>
+                    <li><a href="productos.html?categoria=fitness">Fitness</a></li>
+                    <li><a href="productos.html?categoria=futbol">Fútbol</a></li>
+                    <li><a href="productos.html?categoria=yoga">Yoga</a></li>
+                    <li><a href="productos.html?categoria=tenis">Tenis</a></li>
+                </ul>
+            </div>
+            <div class="filter-section">
+                <h4>Género</h4>
+                <ul>
+                    <li><a href="productos.html?genero=hombre">Hombre</a></li>
+                    <li><a href="productos.html?genero=mujer">Mujer</a></li>
+                    <li><a href="productos.html?genero=unisex">Unisex</a></li>
+                </ul>
+            </div>
+            <div class="filter-section">
+                <h4>Precio</h4>
+                <input type="range" id="price-range" min="0" max="200" step="10">
+                <div class="price-range-values">
+                    <span id="min-price">0€</span>
+                    <span id="max-price">200€</span>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-header">
+                <h2>Todos los Productos</h2>
+                <div class="sort-options">
+                    <select id="sort-by">
+                        <option value="popularidad">Ordenar por: Popularidad</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="novedades">Novedades</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="all-products">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Mismo footer que index.html -->
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Demjt</h3>
+                <p>Tu tienda de confianza para ropa y accesorios deportivos de alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@sportfit.com</p>
+                <p>+34 123 456 789</p>
+                <p>Calle Deportiva, 123, Madrid</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SportFit. Todos los derechos reservados.</p>
+        </div> 
+
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/productos.js"></script>
+    
+</body>
+</html>  
+
+<!--
+<html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - demjt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+         Mismo header que index.html 
+         <div class="container">
+            <div class="logo">
+                <img src="img/logos/logo-demjt.png" alt="Demjt Logo">
+                <h1>DEMJT</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="#novedades">Novedades</a></li>
+                    <li><a href="#ofertas">Ofertas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="user-cart">
+                <a href="#cuenta"><i class="fas fa-user"></i></a>
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="products-page">
+        <div class="filters">
+            <h3>Filtrar por:</h3>
+            <div class="filter-section">
+                <h4>Categoría</h4>
+                <ul>
+                    <li><a href="productos.html">Todos</a></li>
+                    <li><a href="productos.html?categoria=running">Running</a></li>
+                    <li><a href="productos.html?categoria=fitness">Fitness</a></li>
+                    <li><a href="productos.html?categoria=futbol">Fútbol</a></li>
+                    <li><a href="productos.html?categoria=yoga">Yoga</a></li>
+                    <li><a href="productos.html?categoria=tenis">Tenis</a></li>
+                </ul>
+            </div>
+            <div class="filter-section">
+                <h4>Género</h4>
+                <ul>
+                    <li><a href="productos.html?genero=hombre">Hombre</a></li>
+                    <li><a href="productos.html?genero=mujer">Mujer</a></li>
+                    <li><a href="productos.html?genero=unisex">Unisex</a></li>
+                </ul>
+            </div>
+            <div class="filter-section">
+                <h4>Precio</h4>
+                <input type="range" id="price-range" min="0" max="200" step="10">
+                <div class="price-range-values">
+                    <span id="min-price">0€</span>
+                    <span id="max-price">200€</span>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-header">
+                <h2>Todos los Productos</h2>
+                <div class="sort-options">
+                    <select id="sort-by">
+                        <option value="popularidad">Ordenar por: Popularidad</option>
+                        <option value="precio-asc">Precio: Menor a Mayor</option>
+                        <option value="precio-desc">Precio: Mayor a Menor</option>
+                        <option value="novedades">Novedades</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="all-products">
+            <div class="product-card" data-id="6">
+                <span class="badge">Oferta</span>
+                <img src="img/productos/balon-futbol.jpg" alt="Balón Fútbol Pro">
+                <div class="product-info">
+                    <h3>Balón Fútbol Pro</h3>
+                    <div class="price">
+                        39.99€
+                        <span class="old-price">49.99€</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="2">
+                
+                <img src="img/productos/leggings-yoga-mujer.jpg" alt="Leggings Yoga Fit">
+                <div class="product-info">
+                    <h3>Leggings Yoga Fit</h3>
+                    <div class="price">
+                        34.99€
+                        
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star">
+                        </i><i class="fas fa-star">
+                        </i><i class="fas fa-star">
+                        </i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="3">
+                <span class="badge">Oferta</span>
+                <img src="img/productos/zapatillas-running.jpg" alt="Zapatillas Running Pro">
+                <div class="product-info">
+                    <h3>Zapatillas Running Pro</h3>
+                    <div class="price">
+                        89.99€
+                        <span class="old-price">109.99€</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="7">
+                
+                <img src="img/productos/raqueta-tenis.jpg" alt="Raqueta Tenis">
+                <div class="product-info">
+                    <h3>Raqueta Tenis</h3>
+                    <div class="price">
+                        79.99€
+                        
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="5">
+                
+                <img src="img/productos/top-deportivo.jpg" alt="Top Deportivo">
+                <div class="product-info">
+                    <h3>Top Deportivo</h3>
+                    <div class="price">
+                        24.99€
+                        
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="1">
+                
+                <img src="img/productos/camiseta-running-hombre.jpg" alt="Camiseta Running Tech">
+                <div class="product-info">
+                    <h3>Camiseta Running Tech</h3>
+                    <div class="price">
+                        29.99€
+                        <span class="old-price">39.99€</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star">
+                        </i><i class="fas fa-star">
+                        </i><i class="fas fa-star">
+                        </i><i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="8">
+                
+                <img src="img/productos/mochila-deportiva.jpg" alt="Mochila Deportiva">
+                <div class="product-info">
+                    <h3>Mochila Deportiva</h3>
+                    <div class="price">
+                        45.99€ 
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        
+            <div class="product-card" data-id="4">
+                
+                <img src="img/productos/chandal-fitness.jpg" alt="Chándal Fitness">
+                <div class="product-info">
+                    <h3>Chándal Fitness</h3>
+                    <div class="price">
+                        59.99€
+                        
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <button class="btn add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+         Mismo footer que index.html 
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Demjt</h3>
+                <p>Tu tienda de confianza para ropa y accesorios deportivos de alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@sportfit.com</p>
+                <p>+34 123 456 789</p>
+                <p>Calle Deportiva, 123, Madrid</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 SportFit. Todos los derechos reservados.</p>
+        </div> 
+
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/productos.js"></script>
+    
+
+</body>
+</html> 
+-->

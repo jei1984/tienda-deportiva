@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Demjt</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Mismo header que index.html -->
+         <div class="container">
+            <div class="logo">
+                <img src="img/logos/logo-demjt.png" alt="Demjt Logo">
+                <h1>DEMJT</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="novedades.html">Novedades</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="user-cart">
+                <a href="#cuenta"><i class="fas fa-user"></i></a>
+                <a href="carrito.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="checkout-page">
+        <div class="checkout-container">
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">
+                    <span>1</span>
+                    <p>Información de Envío</p>
+                </div>
+                <div class="step" data-step="2">
+                    <span>2</span>
+                    <p>Método de Pago</p>
+                </div>
+                <div class="step" data-step="3">
+                    <span>3</span>
+                    <p>Revisar Pedido</p>
+                </div>
+            </div>
+
+            <form id="checkout-form">
+                <div class="checkout-section active" id="shipping-info">
+                    <h3>Información de Envío</h3>
+                 <div class="form-row">
+                     <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                     </div>
+                    
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                 </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="codigo-postal">Código Postal</label>
+                            <input type="text" id="codigo-postal" name="codigo-postal" required>
+                        </div>
+                    </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pais">País</label>
+                        <select id="pais" name="pais" required>
+                            <option value="">Seleccionar país</option>
+                            <option value="ES">España</option>
+                            <option value="MX">México</option>
+                            <option value="AR">Argentina</option>
+                            <option value="CO">Colombia</option>
+                            <option value="CL">Chile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-next" data-next="payment-method">Continuar</button>
+                    </div>
+                </div>
+
+                <div class="checkout-section" id="payment-method">
+                    <h3>Método de Pago</h3>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="tarjeta" name="metodo-pago" value="tarjeta" checked>
+                            <label for="tarjeta">
+                                <i class="far fa-credit-card"></i>
+                                <span>Tarjeta de Crédito/Débito</span>
+                            </label>
+                            <div class="payment-details" id="tarjeta-details">
+                                <div class="form-group">
+                                    <label for="numero-tarjeta">Número de Tarjeta</label>
+                                    <input type="text" id="numero-tarjeta" name="numero-tarjeta" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fecha-expiracion">Fecha de Expiración</label>
+                                        <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AA">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre-tarjeta">Nombre en la Tarjeta</label>
+                                    <input type="text" id="nombre-tarjeta" name="nombre-tarjeta">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="paypal" name="metodo-pago" value="paypal">
+                            <label for="paypal">
+                                <i class="fab fa-paypal"></i>
+                                <span>PayPal</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-prev" data-prev="shipping-info">Atrás</button>
+                        <button type="button" class="btn btn-next" data-next="review-order">Continuar</button>
+                    </div>
+                </div>
+
+                <div class="checkout-section" id="review-order">
+                    <h3>Revisar Pedido</h3>
+                    <div class="order-summary">
+                        <div class="order-items">
+                            <h4>Tu Pedido</h4>
+                            <div id="order-items-list">
+                                <!-- Los items del pedido se cargarán dinámicamente con JavaScript -->
+                            </div>
+                            <div class="order-totals">
+                                <div class="total-row">
+                                    <span>Subtotal:</span>
+                                    <span id="order-subtotal">0.00€</span>
+                                </div>
+                                <div class="total-row">
+                                    <span>Envío:</span>
+                                    <span id="order-shipping">0.00€</span>
+                                </div>
+                                <div class="total-row grand-total">
+                                    <span>Total:</span>
+                                    <span id="order-total">0.00€</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shipping-info">
+                            <h4>Información de Envío</h4>
+                            <div id="shipping-info-review">
+                                <!-- La información de envío se cargará dinámicamente con JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-prev" data-prev="payment-method">Atrás</button>
+                        <button type="submit" class="btn">Realizar Pedido</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Mismo footer que index.html -->
+         <div class="footer-content">
+            <div class="footer-section">
+                <h3>SportFit</h3>
+                <p>Tu tienda de confianza para ropa y accesorios deportivos de alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>info@sportfit.com</p>
+                <p>+34 123 456 789</p>
+                <p>Calle Deportiva, 123, Madrid</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SportFit. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
